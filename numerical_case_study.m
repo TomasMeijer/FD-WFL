@@ -316,12 +316,12 @@ if ~no_plot
     % Plot FreePC results
     figure();
     subplot(2,1,1);
-    stairs([0:Lsim-1],uk','b','LineWidth',1.5); hold on;
+    stairs([0:Lsim-1],uk','LineWidth',1.5); hold on;
     stairs([0;Lsim-1],[umin' umax'; umin' umax'],':','LineWidth',1.2);
     xlim([0,Lsim-1]); ylabel('$u_k$'); 
     ylim([-12,22]);
     subplot(2,1,2);
-    stairs([0:Lsim-1],yk','b','LineWidth',1.5); hold on;
+    stairs([0:Lsim-1],yk','LineWidth',1.5); hold on;
     stairs([0;Lsim-1],[ymin' ymax'; ymin' ymax'],':','LineWidth',1.2);
     stairs([0;Lsim/2;Lsim],[yref1';yref2';yref2'],'k','LineWidth',1);
     xlabel('$k$'); ylabel('$y_k$');
@@ -384,4 +384,5 @@ if ~no_plot
 end
 
 % Display achieved cost
+
 display(['Achieved cost using MPC: ',num2str(cost_mpc)]);
